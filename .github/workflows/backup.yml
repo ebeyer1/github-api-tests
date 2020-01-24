@@ -12,11 +12,7 @@ jobs:
     - uses: actions/checkout@v2
       with:
         path: backup-dir
-    - name: run a one-line script
-      run: echo Hello, world!
-    - name: ls current directory
-      run: ls
-    - name: cd to backup-dir
-      run: cd backup-dir && ls
-    - name: ls inside backup-dir
+    - name: zip backup-dir
+      run: zip -r backup.zip ./backup-dir
+    - name: list directory to check for zip
       run: ls
