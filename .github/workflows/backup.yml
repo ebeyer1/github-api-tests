@@ -16,10 +16,6 @@ jobs:
       run: zip -r backup.zip ./backup-dir -x "./backup-dir/.git/*" "./backup-dir/.github/*"
     - name: display stuff
       run: ls && pwd
-    - name: zip backup-dir to github/workspace
-      run: zip -r /github/workspace/backup.zip ./backup-dir -x "./backup-dir/.git/*" "./backup-dir/.github/*"
-    - name: display github/workspace
-      run: cd /github/workspace && ls && pwd
     - uses: jakejarvis/s3-sync-action@master
       with:
         args: --acl public-read --follow-symlinks --delete
@@ -28,5 +24,5 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: 'us-east-1'
-        SOURCE_DIR: 'backup.zip'
+        SOURCE_DIR: './backup.zip'
         DEST_DIR: '/'
