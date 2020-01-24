@@ -12,21 +12,13 @@ jobs:
     - uses: actions/checkout@v2
       with:
         path: backup-dir
-    - name: look at root
-      run: cd / && ls
-    - name: look at github dir
-      run: cd /github && ls
     - name: zip backup-dir
       run: zip -r backup.zip ./backup-dir -x "./backup-dir/.git/*" "./backup-dir/.github/*"
-    - name: display github/workspace
-      run: cd /github/workspace && ls && pwd
-    - name: see where we are after the previous cd command
+    - name: display stuff
       run: ls && pwd
     - name: zip backup-dir to github/workspace
       run: zip -r /github/workspace/backup.zip ./backup-dir -x "./backup-dir/.git/*" "./backup-dir/.github/*"
-    - name: display stuff
-      run: ls && pwd
-    - name: display github/workspace2
+    - name: display github/workspace
       run: cd /github/workspace && ls && pwd
     - uses: jakejarvis/s3-sync-action@master
       with:
