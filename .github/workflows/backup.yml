@@ -14,8 +14,16 @@ jobs:
         path: backup-dir
     - name: zip backup-dir
       run: zip -r backup.zip ./backup-dir -x "./backup-dir/.git/*" "./backup-dir/.github/*"
+    - name: display github/workspace
+      run: cd /github/workspace && ls && pwd
+    - name: see where we are after the previous cd command
+      run: ls && pwd
+    - name: zip backup-dir to github/workspace
+      run: zip -r /github/workspace/backup.zip ./backup-dir -x "./backup-dir/.git/*" "./backup-dir/.github/*"
     - name: display stuff
       run: ls && pwd
+    - name: display github/workspace2
+      run: cd /github/workspace && ls && pwd
     - uses: jakejarvis/s3-sync-action@master
       with:
         args: --acl public-read --follow-symlinks --delete
