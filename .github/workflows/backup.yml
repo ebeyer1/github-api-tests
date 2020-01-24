@@ -13,6 +13,6 @@ jobs:
       with:
         path: backup-dir
     - name: zip backup-dir
-      run: zip -r backup.zip ./backup-dir
+      run: zip -r backup.zip ./backup-dir -x ".git/*" ".github/*"
     - name: list directory to check for zip
       run: ls
