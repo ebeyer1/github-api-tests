@@ -12,6 +12,10 @@ jobs:
     - uses: actions/checkout@v2
       with:
         path: backup-dir
+    - name: look at root
+      run: cd / && ls
+    - name: look at github dir
+      run: cd /github && ls
     - name: zip backup-dir
       run: zip -r backup.zip ./backup-dir -x "./backup-dir/.git/*" "./backup-dir/.github/*"
     - name: display github/workspace
