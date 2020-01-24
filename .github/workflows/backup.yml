@@ -17,6 +17,6 @@ jobs:
     - name: ls current directory
       run: ls
     - name: cd to backup-dir
-      run: cd backup-dir
+      run: cd backup-dir && ls
     - name: ls inside backup-dir
       run: ls
