@@ -4,3 +4,4 @@ Director:
       - Movie: {title: E.T., year: 1975}
       - Movie: {title: Jaws, year: 1982}
       - Movie: {title: Something new, year: 2020}
+      - Movie: {title: Something new 2, year: 2022}
