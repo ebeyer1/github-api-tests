@@ -1,0 +1,3 @@
+new testing feature record for batch insert
+
+multi line

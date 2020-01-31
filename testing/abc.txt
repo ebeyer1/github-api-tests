@@ -1,1 +1,1 @@
-new record contents v2
+updating an existing record for testing feature during batch
